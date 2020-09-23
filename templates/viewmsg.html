@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<title>Messages</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    
+    
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  {% for message in messages %}
+  <div class="w3-card-4 w3-margin w3-white">
+   
+    <div class="w3-container">
+      <h3>Name: <span class="w3-opacity">{{message.user_name}}</span></h3>
+      <h3>Email: <span class="w3-opacity">{{message.user_email}}</span></h5>
+      <h3>Message: <span class="w3-opacity">{{message.user_msg}}</span></h5>
+      <a href='deletemsg/{{message.user_id}}'>Delete this post</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='editpost/{{message.user_id}}'>Edit this Post</a>
+    </div>
+    
+    
+  </div>
+  {% endfor %}
+<!-- END BLOG ENTRIES -->
+
+
+<!-- END w3-content -->
+</div>
+
+
+
+</body>
+</html>
+
